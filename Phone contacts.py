@@ -1,4 +1,4 @@
-class phone_contacts:
+class phone_Contacts:
 
     def __init__(self, Firstname, Lastname, Phone_number, Email_ID, Groups, DOB):
         self.firstname = Firstname
@@ -64,7 +64,14 @@ class phone_contacts:
                 raise ValueError("DOB should contain numbers and symbols only")
 
 
-puspanathan = phone_contacts("Puspanathan","G","8637635446","puspanathang@gmail.co","Home","13/10/2000")
+fname=input("enter the first name")
+lname=input("enter the last name")
+num=input("enter the number")
+mail=input("enter the email id")
+group=input("enter the family")
+dob=input("enter the dob")
+puspanathan=phone_Contacts(fname, lname, num, mail, group, dob)
+puspanathan = phone_Contacts("Puspanathan","G","8637635446","puspanathang@gmail.co","Home","13/10/2000")
 puspanathan.open_phcontacts()
 puspanathan.firstname_verification()
 puspanathan.lastname_verification()
@@ -78,7 +85,8 @@ phone = [{"Firstname":"Aravindh","Lastname":"M.P","Phno":9994734456,"Email_id":"
          {"Firstname":"Siva","Lastname":"J","Phno":9876543210,"Email_id":"siva@gmail.com","Groups":"Friends","DOB":"16/08/2000"},
          {"Firstname":"Aswath","Lastname":"G","Phno":9823568941,"Email_id":"aswathg@gmail.com","Groups":"Office","DOB":"29/08/2000"},
          {"Firstname":"Indhu","Lastname":"mathi","Phno":9123659800,"Email_id":"indhu@gmail.com","Groups":"Friends","DOB":"06/09/2000"},
-         {"Firstname":"Roshni","Lastname":"P","Phno":9864658764,"Email_id":"Roshni@gmail.com","Groups":"Friends","DOB":"28/05/2000"}]
+         {"Firstname":"Roshni","Lastname":"P","Phno":9864658764,"Email_id":"Roshni@gmail.com","Groups":"Friends","DOB":"28/05/2000"},
+         {"Firstname":"Rohan","Lastname":"S","Phno":8527419633,"Email_id":"rohans@gmail.com","Groups":"Friends","DOB":"25/09/2000"}]
 
 for i in phone:
     for j,k in i.items():
