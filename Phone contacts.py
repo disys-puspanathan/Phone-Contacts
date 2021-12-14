@@ -6,7 +6,6 @@ contacts = {"Anu":9087014956,"Aswath":8569587420,"Aravindh":6398527414,"Ajay kum
 def createnewcontact():
     phonenumber = input("___Enter phone number___:")
     if(len(phonenumber) == 10):
-        if type(phonenumber) == str:
             print("Phone number created")
         else:
             raise TypeError("Phone number should contain only integers")
