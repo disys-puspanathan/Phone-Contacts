@@ -1,115 +1,46 @@
-class phone_Contacts:
-
-    def __init__(self, Firstname, Lastname, Phone_number, Email_ID, Groups, DOB):
-        self.firstname = Firstname
-        self.lastname = Lastname
-        self.phonenumber = Phone_number
-        self.emailid = Email_ID
-        self.groups = Groups
-        self.dob = DOB
-
-    def open_phcontacts(self):
-        print("Phone Contacts")
-
-    def firstname_verification(self):
-        if type(self.firstname) == str:
-            if len(self.firstname) <=15:
-                print("Firstname verified")
-            else:
-                raise ValueError("Firstname should contain lesser than or equal to 15 letters")
+contacts = {"Anu":9087014956,"Aswath":8569587420,"Aravindh":6398527414,"Ajay kumar":7878794561,"Anjana":9520147963,"Ajith":9994744562,
+            "Abbhas":8968745213,"Banu":7419630025,"Barath":7788994455,"Brindha":9876543210,"Brindhesh":6563646768,"Chandru":9998813452,
+            "Cibi":9000554987,"Dhinesh":8886612345,"Gowtham":9952684128,"Guna":9943030973,"Hari":8610408567,"Harish":6383866533,
+            "Indhu":6382621190,"Jaison":8220132890,"Jayanth":8883396779,"Kamalesh":6379935955,"Karthick":7868802316,"Kavin":8428434362,
+            "Kiruba":6383114399,"Kovai":809691000,"Krishna":7708101333,"Loki":8770832705}
+def createnewcontact():
+    phonenumber = input("___Enter phone number___:")
+    if(len(phonenumber) == 10):
+        if type(phonenumber) == str:
+            print("Phone number created")
         else:
-            raise TypeError("Firstname should contain letters only")
+            raise TypeError("Phone number should contain only integers")
+    else:
+        raise ValueError("Phone Number should contain 10 numbers only")
+    yesno=input("continue y/n ?")
+    if(yesno == 'y'):
+           menu()
+    else:
+            exit()
 
-    def lastname_verification(self):
-        if type(self.lastname) == str:
-            if len(self.lastname) <=15:
-                print("Lastname verified")
-            else:
-                raise ValueError("Lastname should contain lesser than or equal to 15 letters")
-        else:
-            raise TypeError("Lastname should contain letters only")
-
-    def phonenumber_verification(self):
-        if(len(self.phonenumber)==10):
-            if type(self.phonenumber) == str:
-                print("Phone number verified")
-            else:
-                raise TypeError("Phone number should contain only integers")
-        else:
-            raise ValueError("Phone number should not be greater or lesser than 10")
-
-    def emailid_verification(self):
-        if type(self.emailid) == str:
-            if len(self.emailid) <=30:
-                print("Emailid verified")
-            else:
-                raise ValueError("Emailid should not contain more than 30 values")
-        else:
-            raise TypeError("Invalid email ID")
-
-    def groups_verification(self):
-        if type(self.groups) == str:
-            if len(self.groups) <=10:
-                print("Groups verified")
-            else:
-                raise ValueError("Groups should contain lesser than or equal to 10 letters")
-        else:
-            raise TypeError("Group should contain letters only")
-
-    def dob_verification(self):
-        if isinstance(self.dob,str):
-            if len(self.dob) <= 10:
-                print("Date Of Birth Verified")
-            else:
-                raise ValueError("DOB should contain numbers and symbols only")
+def viewcontact():
+    for i,j in contacts.items():
+        print("",i,":",j)
+        print("\n")
 
 
-fname=input("enter the first name")
-lname=input("enter the last name")
-num=input("enter the number")
-mail=input("enter the email id")
-group=input("enter the family")
-dob=input("enter the dob")
-puspanathan=phone_Contacts(fname, lname, num, mail, group, dob)
-puspanathan = phone_Contacts("Puspanathan","G","8637635446","puspanathang@gmail.co","Home","13/10/2000")
-puspanathan.open_phcontacts()
-puspanathan.firstname_verification()
-puspanathan.lastname_verification()
-puspanathan.phonenumber_verification()
-puspanathan.emailid_verification()
-puspanathan.groups_verification()
-puspanathan.dob_verification()
+def menu():
+    print("""
+    1.Create New Contact
+    2.View Contact
+    3.Exit Contact App
+    """)
 
+    select = int(input("_____________________________________Select options________________________________"))
+    print("\n")
+    if(select == 1):
+        pc = createnewcontact()
+    elif(select == 2):
+        viewcontact()
+    elif(select == 3):
+        print("___Left___")
+        exit()
 
-phone = [{"Firstname":"Aravindh","Lastname":"M.P","Phno":9994734456,"Email_id":"aravindh@gmail.com","Groups":"Home","DOB":"16/10/2000"},
-         {"Firstname":"Siva","Lastname":"J","Phno":9876543210,"Email_id":"siva@gmail.com","Groups":"Friends","DOB":"16/08/2000"},
-         {"Firstname":"Aswath","Lastname":"G","Phno":9823568941,"Email_id":"aswathg@gmail.com","Groups":"Office","DOB":"29/08/2000"},
-         {"Firstname":"Indhu","Lastname":"mathi","Phno":9123659800,"Email_id":"indhu@gmail.com","Groups":"Friends","DOB":"06/09/2000"},
-         {"Firstname":"Roshni","Lastname":"P","Phno":9864658764,"Email_id":"Roshni@gmail.com","Groups":"Friends","DOB":"28/05/2000"},
-         {"Firstname":"Rohan","Lastname":"S","Phno":8527419633,"Email_id":"rohans@gmail.com","Groups":"Friends","DOB":"25/09/2000"}]
-
-for i in phone:
-    for j,k in i.items():
-        print(f"{j}:{k}")
+menu()
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
